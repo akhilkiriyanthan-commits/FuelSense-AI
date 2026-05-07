@@ -8,7 +8,7 @@ st.set_page_config(page_title="MPG Predictor", page_icon="⛽", layout="centered
 # ── Load model ────────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    with open("model.pkl", "rb") as f:
+    with open("mpg_model.pkl", "rb") as f:
         return pickle.load(f)
 
 model = load_model()
