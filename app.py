@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
 # ── Page config ───────────────────────────────────────────────────────────────
@@ -8,8 +8,7 @@ st.set_page_config(page_title="MPG Predictor", page_icon="⛽", layout="centered
 # ── Load model ────────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    with open("mpg_model.pkl", "rb") as f:
-        return pickle.load(f)
+    return joblib.load("mpg_model.pkl")
 
 model = load_model()
 
